@@ -111,6 +111,28 @@ body {
           transition-duration: 0.5s;
         }
       }
+
+      @media screen and (max-width: 840px) {
+        display: grid;
+        grid-template-areas:
+          'title theme-button'
+          'navbar navbar';
+
+        h1 {
+          grid-area: title;
+        }
+
+        #navbar {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          grid-area: navbar;
+        }
+
+        button {
+          grid-area: theme-button;
+        }
+      }
     }
   }
   &.dark {
