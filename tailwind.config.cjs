@@ -4,5 +4,10 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: []
+  plugins: [],
+  theme: {
+    screens: {
+      md: '840px'
+    }
+  },
 }

@@ -21,8 +21,8 @@
   let pages = ['Home', 'About']
 </script>
 
-<header class='mt-8 mb-16 flex items-center justify-between'>
-  <h1 class='text-5xl font-extrabold'>{$location}</h1>
+<header class='mt-8 mb-16 flex items-center justify-between flex-col md:flex-row'>
+  <h1 class='text-5xl font-extrabold mb-8 md:mb-0'>{$location}</h1>
   <div class='flex gap-12'>
     {#each pages as page}
       {#if page == 'Home'}
@@ -31,7 +31,7 @@
         <a href='/{page.toLowerCase()}' use:link class='hover:underline'>{page}</a>
       {/if}
     {/each}
-    <button class='ml-20' on:click={toggle}> 
+    <button class='md:ml-20' on:click={toggle}> 
       <i data-feather='sun' class='hover:animate-spin'/> 
     </button>
   </div>
