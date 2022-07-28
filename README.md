@@ -1,13 +1,14 @@
-# Svelte template with Tailwind CSS
+# My personnal webite
 
-<br>
+You can see it [here](https://drawbu.me).
 
-<div style="display:flex">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/199px-Svelte_Logo.svg.png" />
-  <img src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png" />
-</div>
+## Technologies used
+- Svelte
+- Tailwind
+- Feather-Icons
 
-<br>
+## Inspired by
+- This template: [jhanca-vm/Svelte-Tailwind](https://github.com/jhanca-vm/Svelte-Tailwind)
 
 ## Developing
 
@@ -26,9 +27,3 @@ npm run build
 ```
 
 You can preview the production build with `npm run preview`.
-
-<br>
-
-## Manual Installation
-
-In [this article](https://www.jhanca.site/blog/how-to-install-tailwind-css-with-svelte) I explain step by step how to install and configure Tailwind CSS in a Svelte project.
