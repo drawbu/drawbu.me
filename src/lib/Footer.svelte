@@ -1,4 +1,4 @@
-<footer class="mt-24 flex items-center gap-4">
+<footer class="mt-24 mb-8 flex items-center gap-4">
   <span>
     My socials:
   </span>
