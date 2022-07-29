@@ -26,9 +26,9 @@
   <div class='flex gap-12'>
     {#each pages as page}
       {#if page == 'Home'}
-        <a href='/' use:link class='hover:underline'>{page}</a>
+        <a href='/' use:link class='nav-button'>{page}</a>
       {:else}
-        <a href='/{page.toLowerCase()}' use:link class='hover:underline'>{page}</a>
+        <a href='/{page.toLowerCase()}' use:link class='nav-button'>{page}</a>
       {/if}
     {/each}
     <button class='md:ml-20' on:click={toggle}> 
