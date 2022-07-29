@@ -1,15 +1,13 @@
 <script>
-  import { location, link } from 'svelte-spa-router'
+  import { Router, Link } from 'svelte-routing';
   import { theme } from '../store'
   import { get } from 'svelte/store';
   
-  console.log(get(theme))
   if (get(theme) == 'dark') {
-    console.log('hehe')
     window.document.body.classList.toggle('dark-mode')
   }
 
-  function toggle() {
+  function toggle_darkMode() {
     if (get(theme) == 'light') {
       theme.set('dark')
     } else {
@@ -19,19 +17,25 @@
     console.log(get(theme))
   }
   let pages = ['Home', 'About']
+
+  export let url = '';
 </script>
 
 <header class='mt-8 mb-16 flex items-center justify-between flex-col md:flex-row'>
-  <h1 class='text-5xl font-extrabold mb-8 md:mb-0'>{$location}</h1>
+  <h1 class='text-5xl font-extrabold mb-8 md:mb-0'>drawbu.me</h1>
   <div class='flex gap-12'>
-    {#each pages as page}
-      {#if page == 'Home'}
-        <a href='/' use:link class='nav-button'>{page}</a>
-      {:else}
-        <a href='/{page.toLowerCase()}' use:link class='nav-button'>{page}</a>
-      {/if}
-    {/each}
-    <button class='md:ml-20' on:click={toggle}> 
+    <Router url='{url}'>
+      <nav class='flex gap-12'>
+        {#each pages as page}
+          {#if page == 'Home'}
+            <Link to='/' class='nav-button'>Home</Link>
+          {:else}
+            <Link to='/{page.toLowerCase()}' class='nav-button'>{page}</Link>
+          {/if}
+        {/each}
+      </nav>
+    </Router>
+    <button class='md:ml-20' on:click={toggle_darkMode}> 
       <i data-feather='sun' class='hover:animate-spin'/> 
     </button>
   </div>

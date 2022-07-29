@@ -1,5 +1,5 @@
 <script>
-  import Router from 'svelte-spa-router'
+  import { Router, Route } from 'svelte-routing';
 
   // Components
   import Header from './lib/Header.svelte';
@@ -10,17 +10,19 @@
   import About from './pages/About.svelte';
   import NotFound from './pages/NotFound.svelte'
 
-  let routes = {
-    '/': Homepage,
-    '/about': About,
-    '*': NotFound
-  }
+  export let url = '';
 </script>
 
 <div class='w-auto md:w-[50rem] m-auto pr-4 pl-4' id='app'>
   <Header />
   <main>
-    <Router {routes} />
+    <Router url='{url}'>
+      <div>
+        <Route path='/'> <Homepage /> </Route>
+        <Route path='/about'><About /> </Route>
+        <Route> <NotFound /> </Route>
+      </div>
+    </Router>
   </main>
   <Footer />
 </div>
