@@ -1,24 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Themes */
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  transition: background-color 0.3s;
-  @apply text-slate-800 text-justify font-light text-[17px] bg-stone-100;
-}
-
-body.dark-mode {
-  @apply text-white bg-slate-800;
-}
-
-
-/* Normal links */
-.link {
-  @apply text-blue-500;
-}
-
-.link:hover {
-  @apply underline;
-}
