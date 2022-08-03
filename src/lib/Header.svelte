@@ -7,14 +7,17 @@
     window.document.body.classList.toggle('dark-mode')
   }
 
-  function toggle_darkMode() {
+  let animation = false;
+  function toggle_darkMode_btn() {
+		animation = true;
+		setTimeout(() => {animation = false;}, 300);
+
     if (get(theme) == 'light') {
       theme.set('dark')
     } else {
       theme.set('light')
     }
-    window.document.body.classList.toggle('dark-mode')
-    console.log(get(theme))
+    window.document.body.classList.toggle('dark-mode');
   }
   let pages = ['Home', 'About']
 
@@ -35,8 +38,8 @@
         {/each}
       </nav>
     </Router>
-    <button class='md:ml-20' on:click={toggle_darkMode}> 
-      <i data-feather='sun' class='hover:animate-spin'/> 
+    <button class='md:ml-20' class:animate-spin={animation} on:click={toggle_darkMode_btn}> 
+      <i data-feather='sun'/>
     </button>
   </div>
 </header>
