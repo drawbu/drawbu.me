@@ -7,11 +7,10 @@
     My socials:
   </span>
 
-  <a href="https://github.com/drawbu" class='nav-button hover:text-gray-500'>
+  <a href="https://github.com/drawbu" class="nav-button hover:text-gray-500">
     <GithubIcon />
   </a>
-  <a href="https://twitter.com/drawbu" class='nav-button hover:text-blue-500'>
+  <a href="https://twitter.com/drawbu" class="nav-button hover:text-blue-500">
     <TwitterIcon />  
   </a>
-
 </footer>

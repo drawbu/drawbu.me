@@ -8,19 +8,28 @@
   // Pages
   import Homepage from './pages/Homepage.svelte';
   import About from './pages/About.svelte';
-  import NotFound from './pages/NotFound.svelte'
+  import NotFound from './pages/NotFound.svelte';
 
   export let url = '';
 </script>
 
-<div class='w-auto md:w-[50rem] m-auto pr-4 pl-4' id='app'>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<div class="w-auto md:w-[50rem] m-auto pr-4 pl-4" id="app">
   <Header />
   <main>
-    <Router url='{url}'>
+    <Router {url}>
       <div>
-        <Route path='/'> <Homepage /> </Route>
-        <Route path='/about'><About /> </Route>
-        <Route> <NotFound /> </Route>
+        <Route path="/"><Homepage /></Route>
+        <Route path="/about"><About /></Route>
+        <Route><NotFound /></Route>
       </div>
     </Router>
   </main>
@@ -43,7 +52,7 @@
 
   /* Themes */
   :global(body) {
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     transition: background-color 0.3s;
     @apply text-slate-800 text-justify font-light text-[17px] bg-stone-100;
   }
@@ -58,7 +67,7 @@
 
   /* Lists */
   :global(ul) {
-    list-style-type: '-';
+    list-style-type: "-";
     @apply m-0;
   }
 
