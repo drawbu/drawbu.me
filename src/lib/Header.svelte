@@ -2,6 +2,7 @@
   import { Router, Link } from 'svelte-routing';
   import { theme } from '../store'
   import { get } from 'svelte/store';
+  import { SunIcon } from 'svelte-feather-icons';
   
   if (get(theme) == 'dark') {
     window.document.body.classList.toggle('dark-mode')
@@ -39,7 +40,7 @@
       </nav>
     </Router>
     <button class='md:ml-20' class:animate-spin={animation} on:click={toggle_darkMode_btn}> 
-      <i data-feather='sun'/>
+      <SunIcon />
     </button>
   </div>
 </header>
