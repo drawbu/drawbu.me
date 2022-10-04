@@ -2,13 +2,13 @@
   import { Router, Route } from 'svelte-routing';
 
   // Components
-  import Header from './lib/Header.svelte';
-  import Footer from './lib/Footer.svelte';
+  import Header from './lib/header.svelte';
+  import Footer from './lib/footer.svelte';
 
   // Pages
-  import Homepage from './pages/Homepage.svelte';
-  import About from './pages/About.svelte';
-  import NotFound from './pages/NotFound.svelte';
+  import Homepage from './pages/homepage.svelte';
+  import About from './pages/about.svelte';
+  import NotFound from './pages/not_found.svelte';
 
   export let url = '';
 </script>
@@ -23,7 +23,7 @@
   <title>drawbu.me</title>
 </head>
 
-<div class="w-auto md:w-[50rem] m-auto pr-4 pl-4" id="app">
+<div id="app">
   <Header />
   <main>
     <Router {url}>
@@ -37,42 +37,48 @@
   <Footer />
 </div>
 
-<style>
-  /* Links */
-  :global(a) {
-    @apply text-blue-500;
+<style lang="scss" global>
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  #app {
+    width: auto;
+    margin: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+
+    @media (min-width: 840px) {
+      width: 50rem;
+    }
+  }
+
+  :global(body) {
+    color: black;
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    background-color: white;
+    transition: background-color 0.3s;
   }
 
   :global(a:hover) {
-    @apply underline;
-  }
-
-  :global(a.nav-button) {
-    @apply text-slate-800;
-  }
-
-  /* Themes */
-  :global(body) {
-    font-family: "Noto Sans JP", sans-serif;
-    transition: background-color 0.3s;
-    @apply text-slate-800 text-justify font-light text-[17px] bg-stone-100;
+    text-decoration: underline;
   }
 
   :global(body.dark-mode) {
-    @apply text-white bg-slate-800;
+    color: white;
+    background-color: #20293A;
+  }
+
+  :global(body.dark-mode *) {
+    color: white;
+    transition: background-color 0.3s;
   }
 
   :global(body.dark-mode a.nav-button) {
-    @apply text-white;
-  }
-
-  /* Lists */
-  :global(ul) {
-    list-style-type: "-";
-    @apply m-0;
-  }
-
-  :global(ul li) {
-    @apply mb-2;
+    color: white;
   }
 </style>

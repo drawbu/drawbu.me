@@ -1,12 +1,12 @@
 <script>
-  import Section from '../lib/Section.svelte';
+  import Section from '../lib/section.svelte';
 </script>
 
 
 <Section title="About me:">
   <p>
     Hi! I'm drawbu, a french student in final year at high school, junior
-    developer interesed by a lot things. I love using python, but I enjoy a
+    developer interested by a lot things. I love using python, but I enjoy a
     lot starting new projects. I recently started interested myself into
     Vue.js, I made with website with it, then I learnt about Svelte and 
     Tailwind, and I remade it entirely. In my free time I like to code, play
