@@ -2,13 +2,13 @@
   export let title;
 </script>
 
-<div class="section">
+<section>
   <h2>{title}</h2>
   <slot />
-</div>
+</section>
 
 <style lang="scss">
-  .section {
+  section {
     text-align: justify;
 
     h2 {
