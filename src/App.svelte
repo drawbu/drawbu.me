@@ -7,10 +7,9 @@
 
   // Pages
   import Homepage from './pages/homepage.svelte';
-  import About from './pages/about.svelte';
   import NotFound from './pages/not_found.svelte';
 
-  export let url = '';
+  let url = ''
 </script>
 
 <div id="app">
@@ -19,7 +18,6 @@
     <Router {url}>
       <div>
         <Route path="/"><Homepage /></Route>
-        <Route path="/about"><About /></Route>
         <Route><NotFound /></Route>
       </div>
     </Router>

@@ -23,7 +23,6 @@
     }
     window.document.body.classList.toggle('dark-mode');
   }
-  let pages = ['Home', 'About'];
 
   export let url = '';
 </script>
@@ -33,13 +32,8 @@
   <div>
     <Router {url}>
       <nav>
-        {#each pages as page}
-          {#if page === 'Home'}
-            <Link to="/">Home</Link>
-          {:else}
-            <Link to="/{page.toLowerCase()}">{page}</Link>
-          {/if}
-        {/each}
+        <Link to="/">Home</Link>
+        <a href="https://drawbu.dev">Projects</a>
       </nav>
     </Router>
     <button
