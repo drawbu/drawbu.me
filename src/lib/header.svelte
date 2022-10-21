@@ -1,6 +1,7 @@
 <script>
+  import { SunIcon, MoonIcon } from 'svelte-feather-icons';
   import { Router, Link } from 'svelte-routing';
-  import { SunIcon } from 'svelte-feather-icons';
+  import { fade, fly } from 'svelte/transition';
   import { get } from 'svelte/store';
 
   import { theme } from '../store';
@@ -16,6 +17,14 @@
     document.documentElement.setAttribute('color-scheme', $theme);
   }
 
+  let prefers_dark_scheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  setInterval(() => {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches !== prefers_dark_scheme) {
+      prefers_dark_scheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+      theme.set(prefers_dark_scheme ? 'dark' : 'light');
+      document.documentElement.setAttribute('color-scheme', $theme);
+    }
+  }, 1000)
   document.documentElement.setAttribute('color-scheme', $theme);
   export let url = '';
 </script>
@@ -33,7 +42,15 @@
       class:animate-spin={animation}
       on:click={toggle_darkMode_btn}
     >
-      <SunIcon />
+      {#if $theme === 'light'}
+        <div in:fly="{{ opacity: 0, duration: 100 }}" out:fade>
+          <MoonIcon />
+        </div>
+      {:else }
+        <div in:fly="{{ opacity: 0, duration: 100 }}" out:fade>
+          <SunIcon />
+        </div>
+      {/if}
     </button>
   </div>
 </header>
@@ -75,12 +92,21 @@
         background-color: transparent;
         border: 0;
         cursor: pointer;
+        position: relative;
 
-        &.animate-spin {
-          :global(svg) {
-            animation-name: spin;
-            animation-duration: 500ms;
-            animation-timing-function: linear;
+        &.animate-spin :global(svg) {
+          animation-name: spin;
+          animation-duration: 360ms;
+          animation-timing-function: linear;
+        }
+
+        div {
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          :global(svg.feather) {
+            color: var(--text-color);
           }
         }
       }
@@ -102,7 +128,10 @@
 
   @keyframes spin {
     from {
-      transform:rotate(0deg);
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
     }
   }
 </style>
