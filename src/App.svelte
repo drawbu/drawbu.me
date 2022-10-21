@@ -27,10 +27,10 @@
 
 <style lang="scss">
   #app {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
 
-    @media (min-width: 832px) {
+    @media (min-width: 840px) {
       margin: auto;
       width: 800px;
     }
