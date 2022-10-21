@@ -57,7 +57,6 @@
     margin-bottom: 64px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 
     h1 {
@@ -74,6 +73,15 @@
       nav {
         display: flex;
         gap: 48px;
+
+        :global(a) {
+          /* Global style because the <a> element is in <Link> */
+          color: var(--text-color);
+
+          &:hover {
+            text-decoration-color: var(--text-color);
+          }
+        }
       }
 
       button {
@@ -93,6 +101,7 @@
 
     @media (min-width: 840px) {
       flex-direction: row;
+      justify-content: space-between;
 
       h1 {
         margin-bottom: 0;
@@ -102,17 +111,6 @@
         gap: 80px;
       }
     }
-  }
-
-  :global(a, svg.feather-sun) {
-    color: black;
-  }
-
-  :global(
-    body.dark-mode header div nav a,
-    body.dark-mode header div svg.feather-sun
-   ) {
-    color: white;
   }
 
   @keyframes spin {

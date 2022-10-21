@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+:root {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+
+  color-scheme: light dark;
+  --text-color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #213547;
+  }
+}
+
+body {
+  background-color: #242424;
+  transition: background-color 0.3s;
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+  }
+}
+
+a {
+  color: dodgerblue;
+  text-decoration: underline transparent;
+  transition: 150ms;
+}
+a:hover {
+  text-decoration-color: dodgerblue;
+}

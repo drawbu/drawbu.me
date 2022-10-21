@@ -37,48 +37,14 @@
   <Footer />
 </div>
 
-<style lang="scss" global>
-  * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
-
+<style lang="scss">
   #app {
-    width: auto;
-    margin: auto;
     padding-right: 16px;
     padding-left: 16px;
 
-    @media (min-width: 840px) {
-      width: 50rem;
+    @media (min-width: 832px) {
+      margin: auto;
+      width: 800px;
     }
-  }
-
-  :global(body) {
-    color: black;
-    font-family: "Noto Sans JP", sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    background-color: white;
-    transition: background-color 0.3s;
-  }
-
-  :global(a:hover) {
-    text-decoration: underline;
-  }
-
-  :global(body.dark-mode) {
-    color: white;
-    background-color: #20293A;
-  }
-
-  :global(body.dark-mode *) {
-    color: white;
-    transition: background-color 0.3s;
-  }
-
-  :global(body.dark-mode a.nav-button) {
-    color: white;
   }
 </style>

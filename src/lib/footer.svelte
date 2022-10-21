@@ -24,7 +24,7 @@
     gap: 16px;
 
     :global(svg.feather) {
-      color: black;
+      color: var(--text-color);
     }
 
     :global(svg.feather-github):hover {
@@ -34,9 +34,5 @@
     :global(svg.feather-twitter):hover {
       color: dodgerblue;
     }
-  }
-
-  :global(body.dark-mode footer svg.feather) {
-    color: white;
   }
 </style>
