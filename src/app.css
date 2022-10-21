@@ -9,9 +9,11 @@
   font-weight: 300;
   font-size: 17px;
 
-  color-scheme: light dark;
   --text-color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
   color: var(--text-color);
+  transition: background-color 0.3s;
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,20 +21,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    --text-color: #213547;
-  }
+[color-scheme="light"] {
+  --text-color: #213547;
+  --background-color: #ffffff;
 }
 
 body {
-  background-color: #242424;
-  transition: background-color 0.3s;
-}
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #ffffff;
-  }
+  background-color: transparent;
 }
 
 a {

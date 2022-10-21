@@ -5,25 +5,18 @@
 
   import { theme } from '../store';
 
-  if (get(theme) === 'dark') {
-    window.document.body.classList.toggle('dark-mode');
-  }
-
   let animation = false;
   function toggle_darkMode_btn() {
     animation = true;
     setTimeout(() => {
       animation = false;
-    }, 300);
+    }, 360);
 
-    if (get(theme) === 'light') {
-      theme.set('dark');
-    } else {
-      theme.set('light');
-    }
-    window.document.body.classList.toggle('dark-mode');
+    theme.set(get(theme) === 'dark' ? 'light' : 'dark');
+    document.documentElement.setAttribute('color-scheme', $theme);
   }
 
+  document.documentElement.setAttribute('color-scheme', $theme);
   export let url = '';
 </script>
 
@@ -110,9 +103,6 @@
   @keyframes spin {
     from {
       transform:rotate(0deg);
-    }
-    to {
-      transform:rotate(360deg);
     }
   }
 </style>
