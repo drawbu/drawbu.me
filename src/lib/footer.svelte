@@ -25,6 +25,7 @@
 
     :global(svg.feather) {
       color: var(--text-color);
+      transition: color 300ms;
     }
 
     :global(svg.feather-github):hover {
